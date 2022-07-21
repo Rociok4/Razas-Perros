@@ -1,0 +1,36 @@
+
+
+<mat-grid-list cols="1" *ngIf="!raza; else divRaza">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divRaza>
+    <div fxLayout="row"
+        fxLayout.gt-xs="colum"
+        fxLayoutGap="30px">
+
+        <div fxFlex="50">
+            <h3>{{raza.id}}</h3>
+            <mat-divider></mat-divider>
+            <br>
+            <img [src]="raza | Imagen">
+        </div>
+        <div fxFlex="50">
+            <h3>{{raza.origen}}</h3>
+            <mat-divider></mat-divider>
+            <mat-list>
+                <mat-list-item>{{raza.temperamento}}</mat-list-item>
+                <mat-list-item>{{raza.colores}}</mat-list-item>
+                <mat-list-item>{{raza.tamano}}</mat-list-item>
+            </mat-list>
+            <br>
+            <button mat-button color="accent" (click)="regresar()"> Regresar</button>
+            
+        </div>
+
+    </div>
+</ng-template>
+
+
